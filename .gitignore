@@ -1,0 +1,9 @@
+# CMake build directory
+build/
+
+# Compiled executables
+vector_search
+test
+
+# Object files
+*.o
