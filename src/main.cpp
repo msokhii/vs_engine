@@ -19,5 +19,8 @@ int main(){
 
     double d2=dot_prod(v1,v2);
     std::cout<<d2<<'\n';
+
+    double d3=cos_sim(v1,v2);
+    std::cout<<d3<<'\n';
     return 0;
 }
