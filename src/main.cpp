@@ -4,6 +4,7 @@
 #include"Vector.hpp"
 #include"Similarity.hpp"
 #include"vectorDB.hpp"
+#include"SearchEngine.hpp"
 
 int main(){
     std::vector<double> numbers={1.1,1.2};
@@ -26,9 +27,13 @@ int main(){
     db.add_vec_DB(v3);
 
     std::cout<<db.size()<<'\n';
-    Vector v1_DB=db.at(1);
+    
+    std::vector<double> q1={4.1,2.2};
+    Vector qV(q1);
 
-    v1_DB.print_Vec();
+    qV.print_Vec();
+    int idx=search_Vec(qV,db);
+    std::cout<<idx<<'\n';
     
     return 0;
 }
