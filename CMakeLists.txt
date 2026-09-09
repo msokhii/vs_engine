@@ -11,4 +11,5 @@ add_executable(vs_engine
     src/main.cpp
     src/Vector.cpp
     src/Similarity.cpp
+    src/vdb.cpp
 )
