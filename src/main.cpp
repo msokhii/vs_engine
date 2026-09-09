@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<utility>
 
 #include"Vector.hpp"
 #include"Similarity.hpp"
@@ -32,8 +33,11 @@ int main(){
     Vector qV(q1);
 
     qV.print_Vec();
-    int idx=search_Vec(qV,db);
-    std::cout<<idx<<'\n';
+    std::vector<std::pair<double,std::size_t>> res=knn_Search(q1,db,2);
+
+    for(auto i=0;i<res.size();++i){
+        std::cout<<"Distance -> "<<res[i].first<<" Index -> "<<res[i].second<<'\n';
+    }
     
     return 0;
 }

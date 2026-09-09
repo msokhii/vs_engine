@@ -2,9 +2,11 @@
 #define SEARCH_ENGINE_HPP
 
 #include<cstddef>
+#include<vector>
+#include<utility>
 #include"vectorDB.hpp"
 #include"Similarity.hpp"
 
-std::size_t search_Vec(const Vector &v,const vectorDB &vdb);
+std::vector<std::pair<double,std::size_t>> knn_Search(const Vector &v,const vectorDB &vdb,const std::size_t k);
 
 #endif
