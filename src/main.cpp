@@ -3,6 +3,7 @@
 
 #include"Vector.hpp"
 #include"Similarity.hpp"
+#include"vectorDB.hpp"
 
 int main(){
     std::vector<double> numbers={1.1,1.2};
@@ -11,16 +12,23 @@ int main(){
     std::vector<double> num2={1.2,3.0};
     Vector v2(num2);
 
+    std::vector<double> num3={5,6.2};
+    Vector v3(num3);
+    
     v1.print_Vec();
     v2.print_Vec();
+    v3.print_Vec();
 
-    double d1=euc_distance(v1,v2);
-    std::cout<<d1<<'\n';
+    vectorDB db;
 
-    double d2=dot_prod(v1,v2);
-    std::cout<<d2<<'\n';
+    db.add_vec_DB(v1);
+    db.add_vec_DB(v2);
+    db.add_vec_DB(v3);
 
-    double d3=cos_sim(v1,v2);
-    std::cout<<d3<<'\n';
+    std::cout<<db.size()<<'\n';
+    Vector v1_DB=db.at(1);
+
+    v1_DB.print_Vec();
+    
     return 0;
 }

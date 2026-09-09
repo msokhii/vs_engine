@@ -11,7 +11,7 @@ public:
 
     void add_vec_DB(const Vector &v);
     std::size_t size();
-    const Vector at(std::size_t idx) const;
+    const Vector& at(std::size_t idx) const;
 private:
     std::vector<Vector> vdb;
 };
