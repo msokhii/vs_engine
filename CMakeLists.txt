@@ -13,4 +13,5 @@ add_executable(vs_engine
     src/Similarity.cpp
     src/vdb.cpp
     src/SearchEngine.cpp
+    src/FileLoader.cpp
 )

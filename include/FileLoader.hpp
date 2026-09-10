@@ -1,6 +1,5 @@
-#include<fstream>
-
 #include"vectorDB.hpp"
+#include<string>
 
-const vectorDB& construct_DB(const fstream f) const;
+const vectorDB construct_DB(std::string &filename);
 
