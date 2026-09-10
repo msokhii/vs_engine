@@ -17,11 +17,11 @@ int main(){
     Vector qV(q1);
 
     qV.print_Vec();
-    std::vector<std::pair<double,std::size_t>> res=knn_Search(q1,db,2);
+    std::vector<std::pair<double,std::size_t>> res=knn_Search(q1,db,1);
+    std::cout<<res[0].first<<" "<<res[0].second<<'\n';
 
-    for(auto i=0;i<res.size();++i){
-        std::cout<<"Distance -> "<<res[i].first<<" Index -> "<<res[i].second<<'\n';
-    }
-    
+    Vector temp=db.at(3);
+    temp.print_Vec();
+        
     return 0;
 }
