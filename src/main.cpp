@@ -8,20 +8,24 @@
 #include"vectorDB.hpp"
 #include"SearchEngine.hpp"
 #include"FileLoader.hpp"
+#include"Document.hpp"
 
 int main(){
     std::string file_Name="/home/msokhi/Desktop/vs_engine/data/vectors.txt";
     vectorDB db=construct_DB(file_Name);
+    std::cout<<db.at(0).get_ID()<<'\n';
 
-    std::vector<double> q1={4.1,2.2};
-    Vector qV(q1);
+    std::vector<double> q={4.2,5.8};
+    Vector q2(q);
+    
+    std::vector<std::pair<double,std::size_t>> res=knn_Search(q2,db,2);
 
-    qV.print_Vec();
-    std::vector<std::pair<double,std::size_t>> res=knn_Search(q1,db,1);
-    std::cout<<res[0].first<<" "<<res[0].second<<'\n';
+    for(auto i=0;i<res.size();++i){
+        std::cout<<res[i].first<<" "<<res[i].second<<'\n';
+    }
 
-    Vector temp=db.at(3);
-    temp.print_Vec();
-        
+    Vector res2=db.at(1).get_emb();
+    res2.print_Vec();
+
     return 0;
 }

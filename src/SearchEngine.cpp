@@ -1,11 +1,13 @@
 #include"SearchEngine.hpp"
+#include"Document.hpp"
 #include<stdexcept>
 #include<limits>
 #include<utility>
 #include<vector>
 #include<algorithm>
 
-std::vector<std::pair<double,std::size_t>> knn_Search(const Vector &v,const vectorDB &vdb,const std::size_t k){
+std::vector<std::pair<double,std::size_t>> knn_Search(const Vector &v,
+const vectorDB &vdb,const std::size_t k){
     std::vector<std::pair<double,std::size_t>> temp;
     std::vector<std::pair<double,std::size_t>> temp2;
     
@@ -17,7 +19,7 @@ std::vector<std::pair<double,std::size_t>> knn_Search(const Vector &v,const vect
     double dist=0;
     std::size_t idx=0;
     for(auto i=0;i<vdb.size();++i){
-        dist=euc_distance(v,vdb.at(i));
+        dist=euc_distance(v,vdb.at(i).get_emb());
         temp.push_back({dist,i});
     };
 

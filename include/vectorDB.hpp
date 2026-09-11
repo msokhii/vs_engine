@@ -2,6 +2,7 @@
 #define VECTORDB_HPP
 
 #include"Vector.hpp"
+#include"Document.hpp"
 #include<vector>
 #include<cstddef>
 
@@ -9,11 +10,11 @@ class vectorDB{
 public:
     vectorDB();
 
-    void add_vec_DB(const Vector &v);
+    void add_doc_DB(const Document &v);
     std::size_t size() const;
-    const Vector& at(std::size_t idx) const;
+    const Document& at(std::size_t idx) const;
 private:
-    std::vector<Vector> vdb;
+    std::vector<Document> vdb;
 };
 
 #endif

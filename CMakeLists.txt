@@ -14,4 +14,5 @@ add_executable(vs_engine
     src/vdb.cpp
     src/SearchEngine.cpp
     src/FileLoader.cpp
+    src/Document.cpp
 )

@@ -1,6 +1,7 @@
 #include"FileLoader.hpp"
 #include"vectorDB.hpp"
 #include"Vector.hpp"
+#include"Document.hpp"
 #include<vector>
 #include<fstream>
 #include<string>
@@ -18,14 +19,27 @@ const vectorDB construct_DB(std::string &fileName){
 
     while(std::getline(f,line)){
         std::stringstream ss(line);
+
+        std::string id_string;
+        std::string text_string;
+        std::string vector_string;
+
+        std::getline(ss,id_string,'|');
+        std::getline(ss,text_string,'|');
+        std::getline(ss,vector_string,'|');
+
+        std::size_t id=std::stoul(id_string);
+        std::stringstream vs(vector_string);
         std::vector<double> v;
         double value=0;
-        while(ss >> value){
+        while(vs >> value){
             v.push_back(value);
         }
         if(v.empty()){ continue; }
+
         Vector v2(v);
-        db.add_vec_DB(v2);
+        Document doc(id,text_string,v2);
+        db.add_doc_DB(doc);
     }
 
     return db;

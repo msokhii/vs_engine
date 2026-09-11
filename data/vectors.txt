@@ -1,5 +1,3 @@
-1.0 2.0
-4.0 5.0
-8.0 9.0
-1.2 2.1
-5.5 7.3
+101|C++ uses RAII for resource management.|1.0 2.0
+102|A vector stores elements contiguously.|4.0 5.0
+103|Binary search runs in logarithmic time.|8.0 9.0
