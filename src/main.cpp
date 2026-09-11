@@ -11,6 +11,16 @@
 #include"Document.hpp"
 
 int main(){
+    std::string user_Input;
+    std::getline(std::cin,user_Input);
+
+    std::streamslice vs(user_Input);
+    std::vector<double> user_V;
+    double value=0;
+    while(vs >> value){
+        user_V.push_back(value);
+    }
+
     std::string file_Name="/home/msokhi/Desktop/vs_engine/data/vectors.txt";
     vectorDB db=construct_DB(file_Name);
     std::cout<<db.at(0).get_ID()<<'\n';
