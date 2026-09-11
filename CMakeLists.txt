@@ -15,4 +15,5 @@ add_executable(vs_engine
     src/SearchEngine.cpp
     src/FileLoader.cpp
     src/Document.cpp
+    src/BenchMark.cpp
 )

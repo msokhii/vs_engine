@@ -1,7 +1,7 @@
 #include"vectorDB.hpp"
 #include"Document.hpp"
 #include<stdexcept>
-
+#include<iostream>
 vectorDB::vectorDB()=default;
 
 void vectorDB::add_doc_DB(const Document &v){
@@ -29,4 +29,14 @@ const Document& vectorDB::at(std::size_t idx) const{
     }
 
     return vdb[idx];
+}
+
+void vectorDB::print_db(){
+    for(auto i=0;i<vdb.size();++i){
+        const Vector &temp=vdb.at(i).get_emb();
+        for(auto j=0;j<temp.size();++j){
+            std::cout<<temp.at(j)<<" ";
+        }
+        std::cout<<'\n';
+    }
 }
