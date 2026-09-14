@@ -9,5 +9,7 @@
 
 std::vector<std::pair<double,std::size_t>> knn_Search(const Vector &v,
 const vectorDB &vdb,const std::size_t k);
+std::vector<std::pair<double,std::size_t>> heap_knn_Search(const Vector &v,
+const vectorDB &vdb,const std::size_t k);
 
 #endif
