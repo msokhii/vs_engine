@@ -15,8 +15,6 @@ public:
     void fill_Vec();
     Vector(const Vector& other);
     Vector& operator=(const Vector& other);
-    Vector(Vector&& other);
-    Vector& operator=(Vector& other);
     ~Vector();
 private:
     double* data_=nullptr;
